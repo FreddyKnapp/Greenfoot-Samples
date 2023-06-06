@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ScriptedActor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Basic Actor class that can follow a script.
+ * @see Script.
+ * Create subclass if you want to extend this.
  */
 public class ScriptedActor extends SmoothMover
 {
