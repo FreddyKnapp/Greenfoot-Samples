@@ -7,16 +7,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ScriptedActor extends SmoothMover
 {
+    // TODO: Implement, pause/resume/restart functionalities.
+    
     private double speed = 1;
     private Script script;
+    private int step;
     private Action action;
     
     public void act() {
         continueScript();
     }
     
-    public void addScript(Script script) {
+    /**
+     * Sets script to actor to follow.
+     */
+    public void setScript(Script script) {
         this.script = script;
+        step = 0;
     }
     
     /**
@@ -28,18 +35,19 @@ public class ScriptedActor extends SmoothMover
             return true;
         }
         
-        if (action == null && !script.hasNextAction()) {
+        if (step >= script.steps()) {
             return true;
         }
         
         if (action == null) {
-            action = script.getNextAction();
+            action = script.getAction(step);
         }
         
         boolean actionComplete = action.run(this);
         
         if (actionComplete) {
             action = null;
+            step++;
         }
         
         return false;

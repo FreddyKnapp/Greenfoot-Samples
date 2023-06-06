@@ -27,7 +27,7 @@ public class MyWorld extends World
         
         ScriptedActor actor = new ScriptedActor();
         actor.setSpeed(7.0312);
-        actor.addScript(script);
+        actor.setScript(script);
         
         addObject(actor, 0, 0);
     }
