@@ -1,15 +1,16 @@
-import java.util.List;
+import java.util.Queue;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * Class to store list of actions for a ScripteActor object to perform.
  */
 public class Script  
 {
-    private List<Action> actions;
+    private Queue<Action> actions;
     
     public Script() {
-        actions = new ArrayList<Action>();
+        actions = new LinkedList<Action>();
     }
     
     public void add(Action action) {
@@ -21,6 +22,6 @@ public class Script
     }
     
     public Action getNextAction() {
-        return actions.remove(0);
+        return actions.remove();
     }
 }

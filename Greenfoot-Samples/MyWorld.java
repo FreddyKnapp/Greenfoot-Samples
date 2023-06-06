@@ -18,10 +18,15 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        ScriptedActor actor = new ScriptedActor();
         Script script = new Script();
-        script.add(new MoveAction(300, 300));
-        script.add(new MoveAction(0, 0));
+        script.add(new MoveAction(50, 50));
+        script.add(new MoveAction(50, 350));
+        script.add(new MoveAction(350, 350));
+        script.add(new MoveAction(350, 50));
+        script.add(new MoveAction(50, 50));
+        
+        ScriptedActor actor = new ScriptedActor();
+        actor.setSpeed(7.0312);
         actor.addScript(script);
         
         addObject(actor, 0, 0);

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ScriptedActor extends SmoothMover
 {
-    private double speed = 2;
+    private double speed = 1;
     private Script script;
     private Action action;
     
@@ -44,6 +44,10 @@ public class ScriptedActor extends SmoothMover
         }
         
         return false;
+    }
+    
+    public void setSpeed(double speed) {
+        this.speed = speed;
     }
     
     /**
