@@ -1,6 +1,9 @@
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * Class to store list of actions for a ScripteActor object to perform.
+ */
 public class Script  
 {
     private List<Action> actions;

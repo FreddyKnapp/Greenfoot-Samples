@@ -20,6 +20,10 @@ public class ScriptedActor extends SmoothMover
         this.script = script;
     }
     
+    /**
+     * Continues or starts script.
+     * @returns True if script is finished, false otherwise.
+     */
     public boolean continueScript() {
         if (script == null) {
             return true;
@@ -42,6 +46,10 @@ public class ScriptedActor extends SmoothMover
         return false;
     }
     
+    /**
+     * Moves towards position at actor's speed.
+     * @return True if position reached, false otherwise.
+     */
     public boolean moveTowards(double x, double y) {
         if (distanceTo(x, y) <= speed) {
             setLocation(x, y);

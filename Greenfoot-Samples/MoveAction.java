@@ -1,3 +1,6 @@
+/**
+ * Simple movement/waypoint action, to move to a specified position.
+ */
 public class MoveAction extends Action {
     private double x;
     private double y;
