@@ -1,14 +1,14 @@
 public class MoveAction extends Action {
-    private int x;
-    private int y;
+    private double x;
+    private double y;
     
-    public MoveAction(int destinationX, int destinationY) {
+    public MoveAction(double destinationX, double destinationY) {
         x = destinationX;
         y = destinationY;
     }
     
     @Override
-    public void run(ScriptedActor actor) {
-        actor.moveTowards(x, y);
+    public boolean run(ScriptedActor actor) {
+        return actor.moveTowards(x, y);
     }
 }

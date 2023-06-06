@@ -10,27 +10,37 @@ public class ScriptedActor extends SmoothMover
 {
     private double speed = 2;
     private Script script;
+    private Action action;
     
     public void act() {
-        moveTowards(300, 300);
+        continueScript();
     }
     
     public void addScript(Script script) {
         this.script = script;
     }
     
-    public boolean checkCompleteAction() {
-        return false;
-    }
-    
-    public boolean continueAction() {
-        if (!checkCompleteAction()) {
+    public boolean continueScript() {
+        if (script == null) {
+            return true;
+        }
         
+        if (action == null && !script.hasNextAction()) {
+            return true;
+        }
+        
+        if (action == null) {
+            action = script.getNextAction();
+        }
+        
+        boolean actionComplete = action.run(this);
+        
+        if (actionComplete) {
+            action = null;
         }
         
         return false;
     }
-    
     
     public boolean moveTowards(double x, double y) {
         if (distanceTo(x, y) <= speed) {

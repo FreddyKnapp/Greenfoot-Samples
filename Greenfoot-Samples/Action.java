@@ -6,6 +6,7 @@
  */
 public class Action  
 {
-    public void run(ScriptedActor actor) {
+    public boolean run(ScriptedActor actor) {
+        return true;
     }
 }

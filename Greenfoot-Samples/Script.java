@@ -9,11 +9,15 @@ public class Script
         actions = new ArrayList<Action>();
     }
     
+    public void add(Action action) {
+        actions.add(action);
+    }
+    
     public boolean hasNextAction() {
         return actions.size() > 0;
     }
     
     public Action getNextAction() {
-        return actions.remove(actions.size() - 1);
+        return actions.remove(0);
     }
 }
